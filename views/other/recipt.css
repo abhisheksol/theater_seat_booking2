@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.receipt {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 350px;
+    margin: 0 auto;
+}
+.header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.details {
+    margin-top: 10px;
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+}
+.detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.total {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-weight: bold;
+}

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Theatre Booking Receipt</title>
+    <link rel="stylesheet" href="recipt.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+   
+
+    <div id="convert"></div>
+    <div class="receipt">
+        <div class="header">
+            Theatre Booking Receipt
+        </div>
+        <!-- movie name: -->
+        <div class="details">
+            <div class="detail">
+                <span>Movie:</span>
+                <span id="moviename">
+                    <%= %>
+                </span>
+            </div>
+            <!-- date : -->
+            <div class="detail">
+                <span>Date:</span>
+                <span id="date">
+                    <%=  %>
+                </span>
+            </div>
+            <!-- Other detail elements here -->
+            <!-- time : -->
+            <div class="detail">
+                <span>Showtime:</span>
+                <span id="time">
+                    <%=  %>
+                </span>
+            </div>
+            <!-- seat: -->
+            <div class="detail">
+                <span>Seat(s):</span>
+                <span id="seat">
+                    <%=  %>
+                </span>
+            </div>
+            <!-- total tickets: -->
+            <div class="detail">
+                <span>Total Tickets:</span>
+                <span id="totaticket">
+                    <%=  %>
+                </span>
+            </div>
+            <!-- total price: -->
+            <div class="detail">
+                <span>Ticket Price:</span>
+                <span id="totatprice">
+                    <%= %>
+                </span>
+            </div>
+            <!-- subtotal: -->
+            <div class="detail">
+                <span>Subtotal:</span>
+                <span id="Subtotal">
+                    <%=  %>
+                </span>
+            </div>
+            <!-- convience fee: -->
+            <div class="detail">
+                <span>Convenience Fee:</span>
+                <span id="Convenience">$3.00</span>
+            </div>
+        </div>
+        <!-- total amount: -->
+        <div class="total">
+            <div class="detail">
+                <span>Total Amount:</span>
+                <span id="Total_Amount">
+                    <%=  %>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    </div> <button type="submit" onclick="pdfgenerator()">PDF...</button></div>
+</body>
+<script>
+function pdfgenerator() {
+    var element = document.getElementById('convert');
+
+    html2pdf().from(element).save();
+} </script>
+<!-- <script src="convert.js"></script> -->
+
+</html>

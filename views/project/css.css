@@ -1,0 +1,242 @@
+body {
+    background-image: url('images.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px; /* Adjust font size */
+    margin-top: 50px;
+    overflow-y: auto;
+    overflow-x: auto;
+    /* overflow: hidden; */
+}
+
+label{
+    font-size: 16px;
+    /* float: left; */
+}
+
+.seat {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(127, 122, 122);
+    margin: 2px;
+    padding: 15px;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.row {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.move_container select {
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    margin-left: 5px;
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 15px;
+    /* float: left; */
+    border-radius: 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /*> arrow option madun kadana sathi  */
+}
+.move_container select:hover{
+    cursor: pointer;
+    border: solid rgba(217, 255, 2, 0.909);
+    border-width: 1px;
+    background-color: #ff9500;
+    transform: scale(1.09);;
+}
+
+.showcase {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-top: 20px;
+    
+}
+
+.showcase li{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: large;
+    
+   
+
+}
+.screen{
+    background-color: aliceblue;
+    background-image: url('avenger.png');
+    background-size: 100%; /* Adjust the sizing of the background image */
+    background-repeat: no-repeat;
+    height: 120px;
+    width: 100%;
+    margin: 15px,0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 25px 55px rgb(252, 255, 253);
+
+}
+.container{
+    perspective: 1000px;
+}
+.seat.Selected {
+    background-color: #9bf452; /* A shade of orange */
+}
+
+/* Available seats */
+.seat {
+    background-color:transparent; 
+    border: 3px solid #eeff00;
+    border-width: 1px;
+    /* transform: rotateX(-25deg); */
+}
+
+/* Booked seats */
+.seat.booked {
+    background-color: #9d9d9d; /* A shade of yellow */
+}
+
+
+.seat:not(.seat.booked):hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    border: 2px solid #555;
+}
+.seat.booked {
+    background-color: #9d9d9d; 
+    position: relative; 
+}
+.seat.booked:hover::before {
+    content: "Booked!"; 
+    position: absolute;
+    background-color: rgb(201, 81, 44); 
+    color: #fff; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    transform: translateX(-50%);
+  
+}
+
+.seat:nth-of-type(3){
+    margin-right: 18px;
+}
+.seat:nth-last-of-type(3)
+{
+    margin-left: 18px;
+}
+
+.text{
+    /* margin: 20px; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 17px;
+    background-color: hsla(93, 100%, 51%, 0.842);
+        /* background: transparent 40%; */
+    border-radius: 13px;
+}
+#total{
+    /* display: flex;
+    justify-content: center; */
+    color: blue;
+    font-size: 20px;
+    margin-left: 5px;
+    /* margin-right: px; */   
+}
+#doller{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+#count{
+    color: rgb(12, 86, 245);
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    
+    .seat {
+        height: 6px;
+        width: 6px;
+        margin: 1px;
+    }
+    
+    .container {
+        margin-top: 5px; /* Adjust spacing between rows */
+    }
+    
+    /* Adjust other styles for smaller screens */
+}
+
+
+
+/*------------------ chat gpt css code for name and icon----------------- */
+#name {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+#name p {
+    margin: 0;
+}
+
+#name::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('./usericon.png');
+    background-size: cover;
+    margin-right: 10px;
+}
+
+/* ----------------------------pay Button-------------------- */
+
+#pay {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#pay:hover {
+    background-color: #313531;
+    border: solid red;
+   
+    border-radius: 5px;
+}
+
+#invisible{
+    display: none;
+}

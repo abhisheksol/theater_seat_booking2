@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Receipt</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .receipt-container {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            max-width: 400px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            margin-bottom: 10px;
+        }
+
+        .details strong {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .total {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        
+        .paid-stamp {
+            background-image: url('stamp.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 1px;
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.7;
+        }
+
+        .paid-stamp img {
+            display: block;
+            max-width: 100%;
+            height: 100px;
+        }
+
+       
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="convert">
+        <div class="receipt-container">
+            <img src="theater_logo.jpg" alt="" srcset="">
+        <!-- <p>---------------------------------------------------------------------------</p>     -->
+            
+            <h2>Receipt </h2>
+            <p><strong>Name:</strong>
+                <%= result.name %>
+            </p>
+            <p><strong>phoneno:</strong>
+                <%= result.phoneno %>
+            </p>
+            <p><strong>Movie Name:</strong>
+                <%= senddata.Movie_Name %>
+            </p>
+            <p><strong>Total Seats Selected:</strong>
+                <%= data.Total_Seats_Selected %>
+            </p> <!--  -->
+            <p><strong>Ticket Price:</strong> $<%= senddata.Ticket_Price %>
+            </p> <!-- remaining -->
+            <p><strong>Total Price:</strong> $<%= data.Total_Price %>
+            </p> <!--  -->
+            <!--  -->
+            <div class="paid-stamp">
+                <img src="stamp.jpg" alt="" srcset="">
+                
+            </div>
+            <p>Thank you for your booking!</p>
+        </div>
+    </div>
+    <button type="submit" onclick="pdfgenerator()">PDF...</button>
+</body>
+<script>
+    function pdfgenerator() {
+        var element = document.getElementById('convert');
+        html2pdf().from(element).save();
+    }
+</script>
+</html>

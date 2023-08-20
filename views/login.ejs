@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="other/login.css">
+<div class="wrapper">
+    <div class="logo">
+        <img src="\theater_logo.jpg" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+       BOOK MYSHOW!
+    </div>
+    <form class="p-3 mt-3" action="/login" method="post"> 
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="email" id="userName" placeholder="email"> <!--email input  -->
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password" id="pwd" placeholder="password">
+        </div>
+        <button class="btn mt-3">Login</button>
+    </form>
+    <div class="text-center fs-6">
+        <a href="#">Forget password?</a> or <a href="/registration">Sign up</a>
+    </div>
+</div>   
